@@ -29,8 +29,8 @@ import { Settings } from './globals/Settings'
 import { priceUpdated } from './stripe/webhooks/priceUpdated'
 import { productUpdated } from './stripe/webhooks/productUpdated'
 
-const generateTitle: GenerateTitle = () => {
-  return 'My Store'
+const generateTitle: GenerateTitle = ({ doc }: any) => {
+  return `My Store ${doc.title?.value ? doc.title?.value : ''}`
 }
 
 const mockModulePath = path.resolve(__dirname, './emptyModuleMock.js')

@@ -18,5 +18,15 @@ export const Header: GlobalConfig = {
         }),
       ],
     },
+    {
+      name: 'metanavItems',
+      type: 'array',
+      maxRows: 6,
+      fields: [
+        link({
+          appearances: false,
+        }),
+      ],
+    },
   ],
 }

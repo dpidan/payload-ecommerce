@@ -489,6 +489,21 @@ export interface Header {
         id?: string | null
       }[]
     | null
+  metanavItems?:
+    | {
+        link: {
+          type?: ('reference' | 'custom') | null
+          newTab?: boolean | null
+          reference?: {
+            relationTo: 'pages'
+            value: string | Page
+          } | null
+          url?: string | null
+          label: string
+        }
+        id?: string | null
+      }[]
+    | null
   updatedAt?: string | null
   createdAt?: string | null
 }

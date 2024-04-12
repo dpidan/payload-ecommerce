@@ -12,10 +12,16 @@ import classes from './index.module.scss'
 
 export const HeaderNav: React.FC<{ header: HeaderType }> = ({ header }) => {
   const navItems = header?.navItems || []
+  const metanavItems = header?.metanavItems || []
   const { user } = useAuth()
 
   return (
     <>
+      <div className={classes.metanav}>
+        {metanavItems.map(({ link }, i) => {
+          return <CMSLink key={i} {...link} appearance="none" />
+        })}
+      </div>
       <nav
         className={[
           classes.nav,
